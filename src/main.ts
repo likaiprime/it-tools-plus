@@ -1,4 +1,4 @@
-import { createApp } from 'vue';
+import { createSSRApp } from 'vue';
 import { createPinia } from 'pinia';
 import { createHead } from '@vueuse/head';
 
@@ -16,7 +16,7 @@ import { i18nPlugin } from './plugins/i18n.plugin';
 
 registerSW();
 
-const app = createApp(App);
+const app = createSSRApp(App);
 
 app.use(createPinia());
 app.use(createHead());
