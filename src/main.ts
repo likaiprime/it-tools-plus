@@ -3,6 +3,7 @@ import { createPinia } from 'pinia';
 import { createHead } from '@vueuse/head';
 
 import { registerSW } from 'virtual:pwa-register';
+import VueGtag from 'vue-gtag';
 import { plausible } from './plugins/plausible.plugin';
 
 import 'virtual:uno.css';
@@ -23,5 +24,5 @@ app.use(i18nPlugin);
 app.use(router);
 app.use(naive);
 app.use(plausible);
-
+app.use(VueGtag, { config: { id: 'G-WBM0MDW3VR' } }, router);
 app.mount('#app');
